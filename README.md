@@ -16,7 +16,7 @@ Welcome to the GenAI Chatbot project - AdminAI! This repository hosts a sophisti
 **Installation**
 1. Clone this repository to your local machine:
     ```bash
-    git clone https://github.com/yourusername/AdminAI.git
+    git clone https://github.com/divishavarma/AdminAI.git
     ```
 2. Navigate to the project directory:
     ```bash
