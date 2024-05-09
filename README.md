@@ -30,7 +30,7 @@ Welcome to the GenAI Chatbot project - AdminAI! This repository hosts a sophisti
 **Usage**
 - Run the application:
     ```bash
-    python app.py
+    chainlit run app.py
     ```
 - Access the chatbot interface through your browser or preferred interface.
 - Upload PDF or CSV files to engage in conversations or analyze data.
