@@ -16,11 +16,11 @@ Welcome to the GenAI Chatbot project - AdminAI! This repository hosts a sophisti
 **Installation**
 1. Clone this repository to your local machine:
     ```bash
-    git clone https://github.com/yourusername/genai-chatbot.git
+    git clone https://github.com/yourusername/AdminAI.git
     ```
 2. Navigate to the project directory:
     ```bash
-    cd genai-chatbot
+    cd AdminAI
     ```
 3. Install dependencies:
     ```bash
@@ -30,7 +30,7 @@ Welcome to the GenAI Chatbot project - AdminAI! This repository hosts a sophisti
 **Usage**
 - Run the application:
     ```bash
-    python main.py
+    python app.py
     ```
 - Access the chatbot interface through your browser or preferred interface.
 - Upload PDF or CSV files to engage in conversations or analyze data.
