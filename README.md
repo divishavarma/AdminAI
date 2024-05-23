@@ -11,6 +11,13 @@ Welcome to the GenAI Chatbot project - AdminAI! This repository hosts a sophisti
 - SQL Query Translation: Convert natural language queries into SQL queries for seamless interaction with the database.
 - Natural Language Responses: Receive responses from the database in natural language, enhancing user experience.
 
+**Solution Diagram**
+![Diagram1-try](https://github.com/divishavarma/AdminAI/assets/107746948/93e6fa51-def6-48ef-b8f8-2333515c2bd3)
+
+
+**FlowChart**
+![Diagram-try2](https://github.com/divishavarma/AdminAI/assets/107746948/32888498-e46d-4abe-ae2b-c56a8fba9a5f)
+
 **Usage**
 
 **Installation**
@@ -35,11 +42,3 @@ Welcome to the GenAI Chatbot project - AdminAI! This repository hosts a sophisti
 - Access the chatbot interface through your browser or preferred interface.
 - Upload PDF or CSV files to engage in conversations or analyze data.
 - Connect the chatbot to your MySQL database for querying data.
-
-**Solution Diagram**
-![Diagram1-try](https://github.com/divishavarma/AdminAI/assets/107746948/93e6fa51-def6-48ef-b8f8-2333515c2bd3)
-
-
-**FlowChart**
-![Diagram-try2](https://github.com/divishavarma/AdminAI/assets/107746948/32888498-e46d-4abe-ae2b-c56a8fba9a5f)
-
