@@ -2,7 +2,7 @@
 
 **Overview**
 
-Welcome to the GenAI Chatbot project - AdminAI! This AI-powered chatbot leverages the capabilities of Llama3-8B-8192, to engage in natural language conversations with PDF and CSV files, and also interfacing with a MySQL database for data retrieval.
+Welcome to the GenAI Chatbot - AdminAI! This AI-powered chatbot leverages the capabilities of Llama3-8B-8192, to engage in natural language conversations with PDF and CSV files, and also interfacing with a MySQL database for data retrieval.
 
 **Features**
 - Natural Language Interaction: Engage in conversations with the AI in natural language.
