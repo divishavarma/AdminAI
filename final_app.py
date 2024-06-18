@@ -197,7 +197,7 @@ async def on_chat_start():
                 ),
                 Slider(
                     id="Temperature",
-                    label="OpenAI - Temperature",
+                    label="Temperature",
                     initial=0.2,
                     min=0,
                     max=2,
