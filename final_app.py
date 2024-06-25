@@ -15,8 +15,22 @@ import chainlit as cl
 from langchain_groq import ChatGroq
 from dotenv import load_dotenv
 import os
+import configparser
 
 from chainlit.input_widget import Slider, Select
+
+# Initialize configparser
+config = configparser.ConfigParser()
+
+# Read the configuration file
+config.read('config.ini')
+
+db_config = config['database']
+host = db_config.get('host')
+port = db_config.get('port')
+user = db_config.get('user')
+password = db_config.get('password')
+database = db_config.get('database')
 
 # Load environment variables from .env file
 load_dotenv()
@@ -197,7 +211,7 @@ async def on_chat_start():
                 ),
                 Slider(
                     id="Temperature",
-                    label="Temperature",
+                    label="OpenAI - Temperature",
                     initial=0.2,
                     min=0,
                     max=2,
@@ -213,26 +227,16 @@ async def on_chat_start():
         print(f"model: {model_name}, temperature: {temperature}")
 
     if chat_profile_obj == "DataBase":
-        # Ask the user for database connection details
-        host = await cl.AskUserMessage(content="Enter the database host:", timeout=60).send()
-        port = await cl.AskUserMessage(content="Enter the database port:", timeout=60).send()
-        user = await cl.AskUserMessage(content="Enter the database user:", timeout=60).send()
-        password = await cl.AskUserMessage(content="Enter the database password:", timeout=60, raise_on_timeout=False).send()
-        database = await cl.AskUserMessage(content="Enter the database name:", timeout=60).send()
-
-        if not (host and port and user and password and database):
-            await cl.Message(content="Failed to get all required inputs.").send()
-            return
         
-        await cl.Message(content="Using model Mixtral-8x7b-32768 with Temperature = 0").send()
-        await cl.Message(content="Processing done!").send()
-
-        db = init_database(user['output'], password['output'], host['output'], port['output'], database['output'])
+        db = init_database(user, password, host, port, database)
         cl.user_session.set("db", db)
         
         # Check if 'data' attribute exists, initialize it if not
         if not hasattr(cl.user_session, 'data'):
             cl.user_session.data = {}
+
+        await cl.Message(content="Using model Mixtral-8x7b-32768 with Temperature = 0").send()
+        await cl.Message(content="Processing done!").send()
         
         # Initialize chat history if not present
         if "chat_history" not in cl.user_session.data:
