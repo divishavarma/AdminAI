@@ -30,7 +30,6 @@ host = db_config.get('host')
 port = db_config.get('port')
 user = db_config.get('user')
 password = db_config.get('password')
-database = db_config.get('database')
 
 # Load environment variables from .env file
 load_dotenv()
@@ -228,6 +227,32 @@ async def on_chat_start():
 
     if chat_profile_obj == "DataBase":
         
+        # database = await cl.AskUserMessage(content="Enter the database name:", timeout=60).send()
+
+        # if not (host and port and user and password and database):
+        #     await cl.Message(content="Failed to get all required inputs.").send()
+        #     return
+        
+        # await cl.Message(content="Using model Mixtral-8x7b-32768 with Temperature = 0").send()
+        # await cl.Message(content="Processing done!").send()
+
+        # db = init_database(user['output'], password['output'], host['output'], port['output'], database['output'])
+        # cl.user_session.set("db", db)
+        
+        # # Check if 'data' attribute exists, initialize it if not
+        # if not hasattr(cl.user_session, 'data'):
+        #     cl.user_session.data = {}
+
+
+        database_response = await cl.AskUserMessage(content="Enter the database name:", timeout=60).send()
+
+        if not database_response:
+            await cl.Message(content="Failed to get the database name.").send()
+            return
+
+        database = database_response['output']
+
+        # Use values from the config file for other parameters
         db = init_database(user, password, host, port, database)
         cl.user_session.set("db", db)
         
